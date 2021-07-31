@@ -30,7 +30,7 @@ namespace Coding
                         ffstart = fstart;
                         sum = 0;
                     }
-                    else if(i==size-1 && arr[i]>0)
+                    else if(sum > maxsum && i == size-1 && arr[i]>0)
                     {
                         end = i;
                         ffstart = fstart;
