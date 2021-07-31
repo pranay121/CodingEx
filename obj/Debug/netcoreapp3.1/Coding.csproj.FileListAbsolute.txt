@@ -1,0 +1,13 @@
+E:\C# Coding\Coding\bin\Debug\netcoreapp3.1\Coding.exe
+E:\C# Coding\Coding\bin\Debug\netcoreapp3.1\Coding.deps.json
+E:\C# Coding\Coding\bin\Debug\netcoreapp3.1\Coding.runtimeconfig.json
+E:\C# Coding\Coding\bin\Debug\netcoreapp3.1\Coding.runtimeconfig.dev.json
+E:\C# Coding\Coding\bin\Debug\netcoreapp3.1\Coding.dll
+E:\C# Coding\Coding\bin\Debug\netcoreapp3.1\Coding.pdb
+E:\C# Coding\Coding\obj\Debug\netcoreapp3.1\Coding.csproj.AssemblyReference.cache
+E:\C# Coding\Coding\obj\Debug\netcoreapp3.1\Coding.AssemblyInfoInputs.cache
+E:\C# Coding\Coding\obj\Debug\netcoreapp3.1\Coding.AssemblyInfo.cs
+E:\C# Coding\Coding\obj\Debug\netcoreapp3.1\Coding.csproj.CoreCompileInputs.cache
+E:\C# Coding\Coding\obj\Debug\netcoreapp3.1\Coding.dll
+E:\C# Coding\Coding\obj\Debug\netcoreapp3.1\Coding.pdb
+E:\C# Coding\Coding\obj\Debug\netcoreapp3.1\Coding.genruntimeconfig.cache
