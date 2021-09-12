@@ -1,13 +1,50 @@
-﻿using System;
+﻿//using System;
 
-namespace Coding
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //minDist.minDistance(new[] { 1, 2,03, 2 }, 1,2);
-            maxSubArray.SubArray(new[] { 1, 2, 5, -7, 2, 3, 9,-3 });
-        }
-    }
-}
+//namespace Coding
+//{
+
+//    // Base class
+//    class My_Parent
+//    {
+//        int i = 19;
+//        // virtual method
+//        public void display()
+//        {
+//            Console.WriteLine("My new parent class.. !" + i);
+//        }
+//    }
+
+//    // Derived class
+//    class My_Child : My_Parent
+//    {
+//        int i = 8;
+//        // Here display method is overridden
+//        public new void display()
+//        {
+//            Console.WriteLine("My new child class.. !" + i);
+//        }
+//    }
+
+//    class GFG
+//    {
+
+//        // Main Method
+//        public static void Main()
+//        {
+
+//            My_Parent obj;
+
+//            // Creating object of the base class
+//            obj = new My_Parent();
+
+//            // Invoking method of the base class
+//            obj.display();
+
+//            // Creating object of the derived class
+//            My_Child obj1 = new My_Child();
+
+//            // Invoking method of derived class
+//            obj1.display();
+//        }
+//    }
+//}
