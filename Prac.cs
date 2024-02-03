@@ -7,6 +7,60 @@ namespace Coding
 {
     class Solution1
     {
+        public static bool isAnagram(string a, string b)
+        {
+            bool flag = true;
+            Dictionary<char, int> dict1 = new Dictionary<char, int>();
+            Dictionary<char, int> dict2 = new Dictionary<char, int>();
+            foreach (char c in a)
+            {
+                if (!dict1.ContainsKey(c))
+                    dict1.Add(c, 1);
+                else
+                    dict1[c]++;
+            }
+            foreach (char c in b)
+            {
+                if (!dict2.ContainsKey(c))
+                    dict2.Add(c, 1);
+                else
+                    dict2[c]++;
+            }
+            foreach (var key in dict1.Keys)
+            {
+                if (!dict2.ContainsKey(key) || dict1[key] != dict2[key])
+                {
+                    flag = false;
+                }
+            }
+            return false;
+            //Your code here
+        }
+        //InterviewBit - 1
+        public static int PickBothsides(int[] arr, int b)
+        {
+            int last = arr.Length - 1, start = 0, maxsum = 0;
+            while(start < b)
+            {
+                maxsum += arr[start];  
+                start++;
+            }
+            return 0;
+        }
+        //IB - 2
+        public static string RemoveConsChar(string str)
+        {
+            int len = str.Length;
+            string newStr = "";
+            for(int i =0;i<len;i++)
+            {
+                if(i < len - 1 && str[i] == str[i + 1])
+                    continue;
+                else
+                    newStr = newStr + str[i];
+            }
+            return newStr;
+        }
         public static void StartPatternIndex(string str, string pattern)
         {
             int len = str.Length, flag = 1, k = 0;
@@ -166,10 +220,103 @@ namespace Coding
             return new string(ch);
         }
 
+        //Function to find a continuous sub-array which adds up to a given number.
+        public static List<int> subarraySum(int[] arr, int n, int s)
+        {
+            int start = 0, curr = 0, sum = 0, end = n - 1;
+            List<int> pos = new List<int>();
+            while (curr <= end)
+            {
+                sum += arr[curr];
+                if (sum == s)
+                {
+                    end = curr;
+                    pos.Add(start);
+                    pos.Add(end);
+                    break;
+                }
+                if (sum < s)
+                    curr++;
+                else if (sum > s)
+                {
+                    sum = 0;
+                    start++;
+                    curr = start;
+                }
+            }
+            Console.WriteLine(sum);
+            return pos;
+            //code here
+        }
+
+        public static void countWords(string sentence)
+        {
+            Dictionary<string, int> wordCount = new Dictionary<string, int>();
+            StringBuilder st = new StringBuilder();
+            foreach (char ch in sentence)
+            {
+                if (ch != ' ')
+                    st.Append(ch);
+                else
+                {
+                    if (!wordCount.ContainsKey(st.ToString()))
+                    {
+                        wordCount.Add(st.ToString(), 1);
+                        st.Clear();
+                    }
+                    else
+                    {
+                        wordCount[st.ToString()]++;
+                        st.Clear();
+                    }
+                }
+            }
+            foreach (var dict in wordCount)
+                Console.WriteLine(dict.Key + ":" + dict.Value);
+        }
+
+        public static void getProjects(IEnumerable<dynamic> obj)
+        {
+            Dictionary<string, List<string>> finalOutput = new Dictionary<string, List<string>>();
+            foreach(var o in obj)
+            {
+                if (!finalOutput.ContainsKey(o.Name))
+                {
+                    finalOutput.Add(o.Name, new List<string> { o.Project });
+                }
+                    
+                else
+                {
+                    List<string> lst = finalOutput[o.Name];
+                    lst.Add(o.Project);
+                    finalOutput[o.Name] = lst;                    
+                }
+            }
+            foreach (var data in finalOutput)
+                Console.WriteLine(data.Key + ":" + string.Join(",",data.Value));
+        }
+        public static string GoaTripPossibility(int n, int s, int c, int h, int l, int t)
+        {
+            return "";
+
+        }
+
         // Driver program to test above function
         public static void Main(string[] args)
         {
-            StartPatternIndex("GeeksforGeeks", "Geeks");
+            //getProjects(new[] { new { Name = "Pranay", Project = "A" }, 
+            //    new { Name = "Pranay", Project = "B" }, 
+            //    new { Name = "Prakash", Project = "A" },
+            //    new { Name = "Girish", Project = "S" }});
+            //countWords("Hello my name is Pranay and Hello ");
+            Console.WriteLine(subarraySum(new int[] { 142, 112, 54, 69, 148, 45, 63, 158, 38, 60, 124, 142, 130, 179, 117, 36, 191, 43, 89, 107, 41, 143, 65,
+                49, 47, 6, 91, 130, 171, 151, 7, 102, 194, 149, 30, 24, 85, 155, 157, 41, 167, 177, 132, 109, 145, 40, 27, 124, 138, 139, 119, 83, 130, 142,
+                34, 116, 40, 59, 105, 131, 178, 107, 74, 187, 22, 146, 125, 73, 71, 30, 178, 174, 98, 113 }, 74, 665));
+            //Console.WriteLine(Median.medianArray(new int[] { 1, 3, 5}, new int[] { 2, 4, 6 }));
+            //Console.WriteLine(isAnagram("geeksforgeeks", "forgeeksgeeks"));
+            //Console.WriteLine(RemoveConsChar("aaaabbdcccg"));
+            //Console.WriteLine(PickBothsides(new int[] { 3, 2, 1, 5, 4 },3));
+            //StartPatternIndex("GeeksforGeeks", "Geeks");
             //Console.WriteLine(ThirdHighestArray(new int[] { 3, 2, 1, 5, 4 }));
             //Console.WriteLine(SecondHighestArray(new int[] { 3,4,2,1,5,4 }));
             //Console.WriteLine(RemoveDuplicateChar("csharpcorner"));
@@ -178,6 +325,7 @@ namespace Coding
             //Console.WriteLine(revOrderString("Welcome to Csharp corner"));
             //Console.WriteLine(isPalindrome("book "));
             //Console.WriteLine(ReverseString("hello"));
+            //Console.WriteLine(GoaTripPossibility(1, 1, 1, 1, 1, 1));
         }
     }
 

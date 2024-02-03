@@ -1,4 +1,5 @@
 ﻿//using System;
+//using System.Runtime.InteropServices;
 
 //namespace Coding
 //{
@@ -19,7 +20,7 @@
 //    {
 //        int i = 8;
 //        // Here display method is overridden
-//        public new void display()
+//        public void displaychild()
 //        {
 //            Console.WriteLine("My new child class.. !" + i);
 //        }
@@ -35,7 +36,9 @@
 //            My_Parent obj;
 
 //            // Creating object of the base class
-//            obj = new My_Parent();
+//            obj = new My_Child();
+
+//            Console.WriteLine("P ref" + obj.GetType());
 
 //            // Invoking method of the base class
 //            obj.display();

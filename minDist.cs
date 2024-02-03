@@ -23,6 +23,7 @@ namespace Coding
                 }
             }
             Console.WriteLine(pos2-pos1);
+
         }
     }
 }
